@@ -1,3 +1,8 @@
+import functools
+import string
+import re
+
+
 class Solution:
     def mySqrt(self, x):
         """
@@ -66,3 +71,51 @@ class Solution:
             return 0
         else:
             return -reverse_number if sign else reverse_number
+
+    
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return functools.reduce(lambda a, x: a ^ x, nums)
+
+    
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s = re.sub('['+string.punctuation+']', '', s.replace(' ', '').lower())
+        if len(s):
+            for ind in range(len(s) // 2 + 1):
+                if (s[ind].isalpha() or s[ind].isdigit()) and s[ind] != s[len(s) - ind - 1]:
+                    return False
+        return True
+
+
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
+        for elem in nums[::]:
+            if elem == val:
+                nums.remove(elem)
+        return len(nums)
+    
+
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if nums:
+            privious = nums[0]
+            for elem in nums[1::]:
+                if privious == elem:
+                    nums.remove(elem)
+                else:
+                    privious = elem
+        return len(nums) 
