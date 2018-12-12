@@ -6,6 +6,11 @@ import re
 class Solution:
     def mySqrt(self, x):
         """
+        Implement int sqrt(int x).
+        Compute and return the square root of x, 
+        where x is guaranteed to be a non-negative integer.
+        Since the return type is an integer, the decimal digits are truncated 
+        and only the integer part of the result is returned.
         :type x: int
         :rtype: int
         """
@@ -21,6 +26,8 @@ class Solution:
 
     def romanToInt(self, s):
         """
+        Given a roman numeral, convert it to an integer. 
+        Input is guaranteed to be within the range from 1 to 3999.
         :type s: str
         :rtype: int
         """
@@ -40,8 +47,10 @@ class Solution:
         return sum
     
 
-    def isPalindrome(self, x):
+    def isNumberPalindrome(self, x):
         """
+        Determine whether an integer is a palindrome. 
+        An integer is a palindrome when it reads the same backward as forward.
         :type x: int
         :rtype: bool
         """
@@ -59,6 +68,7 @@ class Solution:
     
     def reverse(self, x):
         """
+        Given a 32-bit signed integer, reverse digits of an integer.
         :type x: int
         :rtype: int
         """
@@ -75,6 +85,8 @@ class Solution:
     
     def singleNumber(self, nums):
         """
+        Given a non-empty array of integers, every element 
+        appears twice except for one. Find that single one.
         :type nums: List[int]
         :rtype: int
         """
@@ -83,6 +95,8 @@ class Solution:
     
     def isPalindrome(self, s):
         """
+        Given a string, determine if it is a palindrome, 
+        considering only alphanumeric characters and ignoring cases.
         :type s: str
         :rtype: bool
         """
@@ -96,6 +110,8 @@ class Solution:
 
     def removeElement(self, nums, val):
         """
+        Given an array nums and a value val, remove all instances 
+        of that value in-place and return the new length.
         :type nums: List[int]
         :type val: int
         :rtype: int
@@ -108,6 +124,8 @@ class Solution:
 
     def removeDuplicates(self, nums):
         """
+        Given a sorted array nums, remove the duplicates in-place 
+        such that each element appear only once and return the new length.
         :type nums: List[int]
         :rtype: int
         """
