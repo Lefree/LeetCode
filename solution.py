@@ -137,3 +137,16 @@ class Solution:
                 else:
                     privious = elem
         return len(nums) 
+
+    
+    def numJewelsInStones(self, J, S):
+        """
+        You're given strings J representing the types of stones that are jewels, 
+        and S representing the stones you have.  
+        Each character in S is a type of stone you have.  
+        You want to know how many of the stones you have are also jewels.
+        :type J: str
+        :type S: str
+        :rtype: int
+        """
+        return functools.reduce(lambda a, x: a + int(x in J), S, 0)
