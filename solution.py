@@ -150,3 +150,13 @@ class Solution:
         :rtype: int
         """
         return functools.reduce(lambda a, x: a + int(x in J), S, 0)
+
+
+    def toLowerCase(self, str):
+        """
+        Implement function ToLowerCase() that has a string parameter str,
+        and returns the same string in lowercase
+        :type str: str
+        :rtype: str
+        """
+        return ''.join([chr(ord(c) + 32) if c.isupper() else c for c in str])
