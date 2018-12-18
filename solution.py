@@ -139,6 +139,29 @@ class Solution:
         return len(nums) 
 
 
+    def numJewelsInStones(self, J, S):
+        """
+        You're given strings J representing the types of stones that are jewels, 
+        and S representing the stones you have.  
+        Each character in S is a type of stone you have.  
+        You want to know how many of the stones you have are also jewels.
+        :type J: str
+        :type S: str
+        :rtype: int
+        """
+        return functools.reduce(lambda a, x: a + int(x in J), S, 0)
+
+
+    def toLowerCase(self, str):
+        """
+        Implement function ToLowerCase() that has a string parameter str,
+        and returns the same string in lowercase
+        :type str: str
+        :rtype: str
+        """
+        return ''.join([chr(ord(c) + 32) if c.isupper() else c for c in str])
+
+
     def uniqueMorseRepresentations(self, words):
         """
         :type words: List[str]
@@ -169,3 +192,4 @@ class Solution:
         :type A: List[int]
         :rtype: List[int]
         """
+
