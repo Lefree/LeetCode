@@ -137,3 +137,35 @@ class Solution:
                 else:
                     privious = elem
         return len(nums) 
+
+
+    def uniqueMorseRepresentations(self, words):
+        """
+        :type words: List[str]
+        :rtype: int
+        """
+        morse_code = [
+            ".-","-...","-.-.","-..",".","..-.",
+            "--.","....","..",".---","-.-",".-..","--",
+            "-.","---",".--.","--.-",".-.","...","-",
+            "..-","...-",".--","-..-","-.--","--.."
+        ]
+        morse_code = {chr(letter + ord('a')):morse_code[letter] for letter in range(0, 26)}
+        result = set()
+        for word in words:
+            morse_word = ''
+            for letter in word:
+                morse_word += morse_code[letter]
+            result.add(morse_word)
+        return len(result)
+
+
+    def sortArrayByParity(self, A):
+        """
+        Given an array A of non-negative integers, 
+        return an array consisting of all the even elements of A, 
+        followed by all the odd elements of A.
+        You may return any answer array that satisfies this condition.
+        :type A: List[int]
+        :rtype: List[int]
+        """
