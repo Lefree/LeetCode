@@ -160,3 +160,24 @@ class Solution:
         :rtype: str
         """
         return ''.join([chr(ord(c) + 32) if c.isupper() else c for c in str])
+
+
+    def findComplement(self, num):
+        """
+        The given integer is guaranteed to fit within the range of a 32-bit signed integer.
+        You could assume no leading zero bit in the integer’s binary representation.
+        :type num: int
+        :rtype: int
+        """
+        binary = ''
+        while num:
+            binary = str(int(not(num % 2))) + binary
+            num //= 2
+        power = 0
+        while binary:
+            num += 2**power * int(binary[-1])
+            binary = binary[:-1:]
+            power += 1
+        return num
+    
+        
