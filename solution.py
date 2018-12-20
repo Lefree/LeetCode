@@ -138,7 +138,7 @@ class Solution:
                     privious = elem
         return len(nums) 
 
-    
+
     def numJewelsInStones(self, J, S):
         """
         You're given strings J representing the types of stones that are jewels, 
@@ -190,18 +190,25 @@ class Solution:
         y = moves.count('U')-moves.count('D')
         return x == y == 0
 
-    
-    def flipAndInvertImage(self, A):
+
+    def uniqueMorseRepresentations(self, words):
         """
-        Given a binary matrix A, we want to flip the image horizontally, 
-        then invert it, and return the resulting image.
-        To flip an image horizontally means that each row of the image is reversed.  
-        For example, flipping [1, 1, 0] horizontally results in [0, 1, 1].
-        :type A: List[List[int]]
-        :rtype: List[List[int]]
+        :type words: List[str]
+        :rtype: int
         """
-
-
-
+        morse_code = [
+            ".-","-...","-.-.","-..",".","..-.",
+            "--.","....","..",".---","-.-",".-..","--",
+            "-.","---",".--.","--.-",".-.","...","-",
+            "..-","...-",".--","-..-","-.--","--.."
+        ]
+        morse_code = {chr(letter + ord('a')):morse_code[letter] for letter in range(0, 26)}
+        result = set()
+        for word in words:
+            morse_word = ''
+            for letter in word:
+                morse_word += morse_code[letter]
+            result.add(morse_word)
+        return len(result)
 
 
