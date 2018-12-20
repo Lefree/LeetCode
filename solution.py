@@ -180,4 +180,28 @@ class Solution:
             power += 1
         return num
     
-        
+
+    def judgeCircle(self, moves):
+        """
+        :type moves: str
+        :rtype: bool
+        """
+        x = moves.count('R')-moves.count('L')
+        y = moves.count('U')-moves.count('D')
+        return x == y == 0
+
+    
+    def flipAndInvertImage(self, A):
+        """
+        Given a binary matrix A, we want to flip the image horizontally, 
+        then invert it, and return the resulting image.
+        To flip an image horizontally means that each row of the image is reversed.  
+        For example, flipping [1, 1, 0] horizontally results in [0, 1, 1].
+        :type A: List[List[int]]
+        :rtype: List[List[int]]
+        """
+
+
+
+
+
