@@ -212,3 +212,33 @@ class Solution:
         return len(result)
 
 
+    def repeatedNTimes(self, A):
+        """
+        In a array A of size 2N, there are N+1 unique elements, 
+        and exactly one of these elements is repeated N times.
+        Return the element repeated N times.
+        :type A: List[int]
+        :rtype: int
+        """
+        viewed_elements = set()
+        for item in A:
+            if item in viewed_elements:
+                return item
+            else:
+                viewed_elements.add(item)
+    
+    
+    def toGoatLatin(self, S):
+        result = []
+        for ind, item in enumerate(S.split(' ')):
+            if not item[0].lower() in ('a', 'e', 'i', 'o', 'u'):
+                item = item[1::] + item[0]
+            result.append(item + 'ma' + (ind + 1) * 'a')
+        return ' '.join(result)
+
+
+s = Solution()
+print (s.toGoatLatin('The quick brown fox jumped over the lazy dog'))
+
+
+
